@@ -17,4 +17,12 @@ in the official React Native documentation by Facebook.
 - Open Android Studio > Configure > AVD Manager
 - Click on the green arrow for the virtual device of your choice
 - Run the following from the command prompt: `npm run android`
+- To enable Hot Reloading, Ctrl+M and click on _Enable Hot Reloading_
 
+**Real phone**
+
+- Turn off any Virtual Device
+- Connect your phone and allow access to your computer (note that USB access must be 
+turned on in developer settings on your phone)
+- Run `npm run android`
+- To enable Hot Reloading, shake your phone and click on _Enable Hot Reloading_
