@@ -8,7 +8,8 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TextInput, Button} from 'react-native';
-import ListItem from './src/components/ListItem/ListItem'
+import ListItem from './src/components/ListItem/ListItem';
+import List from './src/components/List/List';
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -60,9 +61,7 @@ export default class App extends Component<Props> {
                         onPress={this.placeSubmitHandler}
                     />
                 </View>
-                <View style={styles.listContainer}>
-                    {placesOutput}
-                </View>
+                <List items={this.state.places} />
             </View>
         );
     }
@@ -95,8 +94,5 @@ const styles = StyleSheet.create({
     },
     inputButton: {
         width: "35%"
-    },
-    listContainer: {
-        width: "100%"
     }
 });
