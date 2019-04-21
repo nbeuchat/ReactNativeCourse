@@ -7,10 +7,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TextInput, Button} from 'react-native';
-import ListItem from './src/components/ListItem';
-import List from './src/components/List';
-import UserInput from './src/components/UserInput';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+import PlaceList from './src/components/PlaceList';
+import PlaceInput from './src/components/PlaceInput';
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -26,17 +25,11 @@ export default class App extends Component<Props> {
         places: []
     };
 
-    placeNameChangedHandler = (value) => {
-        this.setState({
-            placeName: value
-        });
-    };
-
-    placeSubmitHandler = () => {
-        if(this.state.placeName.trim() !== ""){
+    placeSubmitHandler = (placeName) => {
+        if(placeName.trim() !== ""){
             this.setState(prevState => {
                 return {
-                    places: prevState.places.concat(this.state.placeName)
+                    places: prevState.places.concat(placeName)
                 };
             });
         }
@@ -46,14 +39,8 @@ export default class App extends Component<Props> {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <UserInput
-                    title="Add!"
-                    placeholder="Enter a place name"
-                    value={this.state.placeName}
-                    onPress={this.placeSubmitHandler}
-                    onChangeText={this.placeNameChangedHandler}
-                />
-                <List items={this.state.places} />
+                <PlaceInput onPlaceAdded={this.placeSubmitHandler} />
+                <PlaceList items={this.state.places} />
             </View>
         );
     }

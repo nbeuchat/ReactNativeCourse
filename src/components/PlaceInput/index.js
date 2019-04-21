@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {View, StyleSheet, TextInput, Button} from 'react-native';
 
-const index = (props) => (
-    <View style={styles.inputContainer}>
-        <TextInput
-            style={styles.inputText}
-            value={props.value}
-            placeholder={props.placeholder}
-            onChangeText={props.onChangeText}
-        />
-        <Button
-            style={styles.inputButton}
-            title={props.title}
-            onPress={props.onPress}
-        />
-    </View>
-);
+
+class PlaceInput extends Component{
+    state = {
+        placeName: ""
+    };
+
+    placeNameChangedHandler = (value) => {
+        this.setState({
+            placeName: value
+        });
+    };
+
+    render(){
+        return (
+            <View style={styles.inputContainer}>
+                <TextInput
+                    style={styles.inputText}
+                    value={this.state.placeName}
+                    placeholder={this.props.placeholder}
+                    onChangeText={this.placeNameChangedHandler}
+                />
+                <Button
+                    style={styles.inputButton}
+                    title={this.props.title}
+                    onPress={() => this.props.onPlaceAdded(this.state.placeName)}
+                />
+            </View>
+        );
+    }
+}
+
+PlaceInput.defaultProps = {
+    title: "Add",
+    placeholder: "Enter a place name"
+};
 
 
 const styles = StyleSheet.create({
@@ -32,4 +52,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default index;
+export default PlaceInput;
