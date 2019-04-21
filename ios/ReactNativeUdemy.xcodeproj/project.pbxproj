@@ -616,7 +616,7 @@
 /* Begin PBXNativeTarget section */
 		00E356ED1AD99517003FC87E /* ReactNativeUdemyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ReactNativeUdemyTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration index for PBXNativeTarget "ReactNativeUdemyTests" */;
 			buildPhases = (
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
@@ -634,7 +634,7 @@
 		};
 		13B07F861A680F5B00A75B9A /* ReactNativeUdemy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ReactNativeUdemy" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration index for PBXNativeTarget "ReactNativeUdemy" */;
 			buildPhases = (
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -652,7 +652,7 @@
 		};
 		2D02E47A1E0B4A5D006451C7 /* ReactNativeUdemy-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ReactNativeUdemy-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration index for PBXNativeTarget "ReactNativeUdemy-tvOS" */;
 			buildPhases = (
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -670,7 +670,7 @@
 		};
 		2D02E48F1E0B4A5D006451C7 /* ReactNativeUdemy-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ReactNativeUdemy-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration index for PBXNativeTarget "ReactNativeUdemy-tvOSTests" */;
 			buildPhases = (
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
@@ -710,7 +710,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ReactNativeUdemy" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration index for PBXProject "ReactNativeUdemy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1451,7 +1451,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ReactNativeUdemyTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration index for PBXNativeTarget "ReactNativeUdemyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1460,7 +1460,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ReactNativeUdemy" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration index for PBXNativeTarget "ReactNativeUdemy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1469,7 +1469,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ReactNativeUdemy-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration index for PBXNativeTarget "ReactNativeUdemy-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1478,7 +1478,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ReactNativeUdemy-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration index for PBXNativeTarget "ReactNativeUdemy-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1487,7 +1487,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ReactNativeUdemy" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration index for PBXProject "ReactNativeUdemy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

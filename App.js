@@ -8,8 +8,9 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TextInput, Button} from 'react-native';
-import ListItem from './src/components/ListItem/ListItem';
-import List from './src/components/List/List';
+import ListItem from './src/components/ListItem';
+import List from './src/components/List';
+import UserInput from './src/components/UserInput';
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -48,19 +49,13 @@ export default class App extends Component<Props> {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <View style={styles.inputContainer}>
-                    <TextInput
-                        style={styles.inputText}
-                        value={this.state.placeName}
-                        placeholder="Enter a place name"
-                        onChangeText={this.placeNameChangedHandler}
-                    />
-                    <Button
-                        style={styles.inputButton}
-                        title="Add!"
-                        onPress={this.placeSubmitHandler}
-                    />
-                </View>
+                <UserInput
+                    title="Add!"
+                    placeholder="Enter a place name"
+                    value={this.state.placeName}
+                    onPress={this.placeSubmitHandler}
+                    onChangeText={this.placeNameChangedHandler}
+                />
                 <List items={this.state.places} />
             </View>
         );
@@ -83,16 +78,5 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#333333',
         marginBottom: 5,
-    },
-    inputContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-    },
-    inputText: {
-        width: "65%"
-    },
-    inputButton: {
-        width: "35%"
     }
 });
