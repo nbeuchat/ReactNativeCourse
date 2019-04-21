@@ -10,7 +10,6 @@ import React, {Component} from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import PlaceList from './src/components/PlaceList';
 import PlaceInput from './src/components/PlaceInput';
-import placeImage from './src/assets/beautiful-castle.jpg';
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -31,7 +30,9 @@ export default class App extends Component<Props> {
                 places: prevState.places.concat({
                     key: Math.random().toString(),
                     name: placeName,
-                    image: placeImage
+                    image: {
+                        uri: "https://10mosttoday.com/wp-content/uploads/2013/07/Neuschwanstein_Castle-1024x682.jpg"
+                    }
                 })
             };
         });
