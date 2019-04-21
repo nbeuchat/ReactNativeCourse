@@ -1,14 +1,17 @@
 # React Native Course
-React Native project for the _React Native the practical guide_ Udemy course of Maximilan 
-Schwarzmüller. 
+
+React Native project for the _React Native the practical guide_ Udemy course of Maximilan
+Schwarzmüller.
 
 The course can be found [here](https://www.udemy.com/react-native-the-practical-guide).
 
 ## Getting started
+
 ### Initial setup
-The project has been generated using the 
+
+The project has been generated using the
 [React Native CLI Quickstart](https://facebook.github.io/react-native/docs/getting-started)
-in the official React Native documentation by Facebook. 
+in the official React Native documentation by Facebook.
 
 ### Running the application on Android
 
@@ -22,7 +25,7 @@ in the official React Native documentation by Facebook.
 **Real phone**
 
 - Turn off any Virtual Device
-- Connect your phone and allow access to your computer (note that USB access must be 
-turned on in developer settings on your phone)
+- Connect your phone and allow access to your computer (note that USB access must be
+  turned on in developer settings on your phone)
 - Run `npm run android`
 - To enable Hot Reloading, shake your phone and click on _Enable Hot Reloading_

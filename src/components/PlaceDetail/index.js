@@ -1,7 +1,7 @@
-import React from "react";
-import { Modal, View, Image, Text, Button, StyleSheet } from "react-native";
+import React from 'react';
+import { Modal, View, Image, Text, Button, StyleSheet } from 'react-native';
 
-const placeDetail = props => {
+const placeDetail = (props) => {
   let modalContent = null;
 
   if (props.place) {
@@ -35,16 +35,16 @@ const styles = StyleSheet.create({
     margin: 22
   },
   buttonsContainer: {
-    alignItems: "flex-end",
-    justifyContent: "flex-end",
-    flexDirection: "row"
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    flexDirection: 'row'
   },
   placeImage: {
     height: 200,
-    width: "100%"
+    width: '100%'
   },
   placeName: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 28
   }
 });

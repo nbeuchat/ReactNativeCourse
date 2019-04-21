@@ -6,30 +6,30 @@
  * @flow
  */
 
-import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+import { connect } from 'react-redux';
 
-import PlaceList from "./src/components/PlaceList";
-import PlaceInput from "./src/components/PlaceInput";
-import PlaceDetail from "./src/components/PlaceDetail";
+import PlaceList from './src/components/PlaceList';
+import PlaceInput from './src/components/PlaceInput';
+import PlaceDetail from './src/components/PlaceDetail';
 import {
   addPlace,
   deleteSelectedPlace,
   selectPlace,
   unselectPlace
-} from "./src/store/actions";
+} from './src/store/actions';
 
 const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
+  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu"
+    'Double tap R on your keyboard to reload,\n' +
+    'Shake or press menu button for dev menu'
 });
 
 type Props = {};
 class App extends Component<Props> {
-  placeAddedHandler = placeName => {
+  placeAddedHandler = (placeName) => {
     this.props.onAddPlace(placeName);
   };
 
@@ -41,7 +41,7 @@ class App extends Component<Props> {
     this.props.onUnselectPlace();
   };
 
-  placeSelectedHandler = key => {
+  placeSelectedHandler = (key) => {
     this.props.onSelectPlace(key);
   };
 
@@ -67,34 +67,34 @@ class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
   },
   welcome: {
     fontSize: 20,
-    textAlign: "center",
+    textAlign: 'center',
     margin: 10
   },
   instructions: {
-    textAlign: "center",
-    color: "#333333",
+    textAlign: 'center',
+    color: '#333333',
     marginBottom: 5
   }
 });
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     places: state.places.places,
     selectedPlace: state.places.selectedPlace
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onAddPlace: name => dispatch(addPlace(name)),
+    onAddPlace: (name) => dispatch(addPlace(name)),
     onDeleteSelectedPlace: () => dispatch(deleteSelectedPlace()),
-    onSelectPlace: key => dispatch(selectPlace(key)),
+    onSelectPlace: (key) => dispatch(selectPlace(key)),
     onUnselectPlace: () => dispatch(unselectPlace())
   };
 };

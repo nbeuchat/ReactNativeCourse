@@ -3,7 +3,7 @@ import {
   DELETE_SELECTED_PLACE,
   UNSELECT_PLACE,
   SELECT_PLACE
-} from "../actions/actionTypes";
+} from '../actions/actionTypes';
 
 const initialState = {
   places: [],
@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
           name: action.placeName,
           image: {
             uri:
-              "https://10mosttoday.com/wp-content/uploads/2013/07/Neuschwanstein_Castle-1024x682.jpg"
+              'https://10mosttoday.com/wp-content/uploads/2013/07/Neuschwanstein_Castle-1024x682.jpg'
           }
         })
       };
@@ -28,7 +28,7 @@ const reducer = (state = initialState, action) => {
     case DELETE_SELECTED_PLACE:
       return {
         ...state,
-        places: state.places.filter(place => {
+        places: state.places.filter((place) => {
           return place.key !== state.selectedPlace.key;
         }),
         selectedPlace: null
@@ -37,7 +37,7 @@ const reducer = (state = initialState, action) => {
     case SELECT_PLACE:
       return {
         ...state,
-        selectedPlace: state.places.find(place => {
+        selectedPlace: state.places.find((place) => {
           return place.key === action.placeKey;
         })
       };
