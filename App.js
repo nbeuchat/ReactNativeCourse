@@ -32,12 +32,25 @@ export default class App extends Component<Props> {
         });
     };
 
+    placeDeletedHandler = index => {
+        this.setState(prevState => {
+            return {
+                places: prevState.places.filter((place,i) => {
+                    return i !== index;
+                })
+            }
+        })
+    };
+
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Welcome to React Native!</Text>
                 <PlaceInput onPlaceAdded={this.placeAddedHandler} />
-                <PlaceList items={this.state.places} />
+                <PlaceList
+                    items={this.state.places}
+                    onItemDeleted={this.placeDeletedHandler}
+                />
             </View>
         );
     }

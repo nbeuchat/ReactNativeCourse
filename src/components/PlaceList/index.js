@@ -6,7 +6,11 @@ const placeList = (props) => (
     <View style={styles.listContainer}>
         {
             props.items.map((item, i) => (
-                <PlaceListItem key={i} placeName={item}/>
+                <PlaceListItem
+                    key={i}
+                    placeName={item}
+                    onItemPressed={() => props.onItemDeleted(i)}
+                />
             ))
         }
     </View>
