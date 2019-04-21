@@ -21,25 +21,22 @@ const instructions = Platform.select({
 type Props = {};
 export default class App extends Component<Props> {
     state = {
-        placeName: "",
         places: []
     };
 
-    placeSubmitHandler = (placeName) => {
-        if(placeName.trim() !== ""){
-            this.setState(prevState => {
-                return {
-                    places: prevState.places.concat(placeName)
-                };
-            });
-        }
+    placeAddedHandler = (placeName) => {
+        this.setState(prevState => {
+            return {
+                places: prevState.places.concat(placeName)
+            };
+        });
     };
 
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <PlaceInput onPlaceAdded={this.placeSubmitHandler} />
+                <PlaceInput onPlaceAdded={this.placeAddedHandler} />
                 <PlaceList items={this.state.places} />
             </View>
         );
