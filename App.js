@@ -10,6 +10,7 @@ import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import PlaceList from "./src/components/PlaceList";
 import PlaceInput from "./src/components/PlaceInput";
+import PlaceDetail from "./src/components/PlaceDetail";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -21,7 +22,8 @@ const instructions = Platform.select({
 type Props = {};
 export default class App extends Component<Props> {
   state = {
-    places: []
+    places: [],
+    selectedPlace: null
   };
 
   placeAddedHandler = placeName => {
@@ -39,6 +41,17 @@ export default class App extends Component<Props> {
     });
   };
 
+  placeDeleteSelectedHandler = () => {
+    this.setState(prevState => {
+      return {
+        places: prevState.places.filter(place => {
+          return place.key !== this.state.selectedPlace.key;
+        }),
+        selectedPlace: null
+      };
+    });
+  };
+
   placeDeletedHandler = key => {
     this.setState(prevState => {
       return {
@@ -49,14 +62,36 @@ export default class App extends Component<Props> {
     });
   };
 
+  placeUnselectedHandler = () => {
+    this.setState({
+      ...this.state,
+      selectedPlace: null
+    });
+  };
+
+  placeSelectedHandler = key => {
+    this.setState(prevState => {
+      return {
+        selectedPlace: prevState.places.find(place => {
+          return place.key === key;
+        })
+      };
+    });
+  };
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <PlaceDetail
+          place={this.state.selectedPlace}
+          onModalClosed={this.placeUnselectedHandler}
+          onPlaceDeleted={this.placeDeleteSelectedHandler}
+        />
+        <Text style={styles.welcome}>Favorite locations manager!</Text>
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />
         <PlaceList
           items={this.state.places}
-          onItemDeleted={this.placeDeletedHandler}
+          onItemSelected={this.placeSelectedHandler}
         />
       </View>
     );
