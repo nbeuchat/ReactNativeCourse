@@ -29,3 +29,15 @@ in the official React Native documentation by Facebook.
   turned on in developer settings on your phone)
 - Run `npm run android`
 - To enable Hot Reloading, shake your phone and click on _Enable Hot Reloading_
+
+## 3rd party native dependencies
+
+Some libraries require modification of the native Android or iOS projects. This section
+tracks down which libraries have been setup in their respective native projects.
+
+You can run `react-native link <package-name>` or manually install the library for Android
+and iOS.
+
+- Vector icons: https://github.com/oblador/react-native-vector-icons
+  - [x] Android (cli)
+  - [x] iOS (cli)
