@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import configureStore from './src/store/configureStore';
 import { registerScreens } from './screens';
-import { goToAuth } from './src/navigation';
+import { goToAuth, goToMainTabs } from './src/navigation';
 
 const store = configureStore();
 
