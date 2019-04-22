@@ -7,7 +7,8 @@ import { Navigation } from 'react-native-navigation';
 import { Provider } from 'react-redux';
 import App from './App';
 import configureStore from './src/store/configureStore';
-import { name as appName } from './app.json';
+import { registerScreens } from './screens';
+import { goToAuth } from './src/navigation';
 
 const store = configureStore();
 
@@ -17,17 +18,13 @@ const RNRedux = () => (
   </Provider>
 );
 
-Navigation.registerComponent(
+registerScreens();
+
+/*Navigation.registerComponent(
   `navigation.playground.WelcomeScreen`,
   () => RNRedux
-);
+);*/
 
 Navigation.events().registerAppLaunchedListener(() => {
-  Navigation.setRoot({
-    root: {
-      component: {
-        name: 'navigation.playground.WelcomeScreen'
-      }
-    }
-  });
+  goToAuth();
 });
