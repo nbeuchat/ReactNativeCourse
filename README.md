@@ -13,6 +13,17 @@ The project has been generated using the
 [React Native CLI Quickstart](https://facebook.github.io/react-native/docs/getting-started)
 in the official React Native documentation by Facebook.
 
+**Navigation**
+
+The project use [React-Native-Navigation (version 2)](https://wix.github.io/react-native-navigation/). Follow the
+[installation guide](https://wix.github.io/react-native-navigation/#/docs/Installing).
+
+Notes:
+
+- iOS was not configured
+- steps 5.1 and 5.2 were ignored, this might cause issues
+- step 9 was ignored (it is optional)
+
 ### Running the application on Android
 
 **Virtual device**
@@ -41,3 +52,6 @@ and iOS.
 - Vector icons: https://github.com/oblador/react-native-vector-icons
   - [x] Android (cli)
   - [x] iOS (cli)
+- React-native-navigation:
+  - [x] Android (manual)
+  - [ ] iOS (manual)
