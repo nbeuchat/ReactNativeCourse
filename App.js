@@ -15,7 +15,7 @@ import PlaceInput from './src/components/PlaceInput';
 import PlaceDetail from './src/components/PlaceDetail';
 import {
   addPlace,
-  deleteSelectedPlace,
+  deletePlace,
   selectPlace,
   unselectPlace
 } from './src/store/actions';
@@ -33,16 +33,8 @@ class App extends Component<Props> {
     this.props.onAddPlace(placeName);
   };
 
-  placeDeleteSelectedHandler = () => {
+  placeDeleteHandler = () => {
     this.props.onDeleteSelectedPlace();
-  };
-
-  placeUnselectedHandler = () => {
-    this.props.onUnselectPlace();
-  };
-
-  placeSelectedHandler = (key) => {
-    this.props.onSelectPlace(key);
   };
 
   render() {
@@ -51,7 +43,7 @@ class App extends Component<Props> {
         <PlaceDetail
           place={this.props.selectedPlace}
           onModalClosed={this.placeUnselectedHandler}
-          onPlaceDeleted={this.placeDeleteSelectedHandler}
+          onPlaceDeleted={this.placeDeleteHandler}
         />
         <Text style={styles.welcome}>Favorite locations manager!</Text>
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />
@@ -93,9 +85,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onAddPlace: (name) => dispatch(addPlace(name)),
-    onDeleteSelectedPlace: () => dispatch(deleteSelectedPlace()),
-    onSelectPlace: (key) => dispatch(selectPlace(key)),
-    onUnselectPlace: () => dispatch(unselectPlace())
+    onDeleteSelectedPlace: () => dispatch(deletePlace())
   };
 };
 

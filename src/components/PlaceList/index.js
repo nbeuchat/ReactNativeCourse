@@ -5,7 +5,7 @@ import PlaceListItem from '../PlaceListItem';
 const placeList = (props) => (
   <FlatList
     style={styles.listContainer}
-    data={props.items}
+    data={props.places}
     renderItem={(info) => (
       <PlaceListItem
         placeName={info.item.name}
