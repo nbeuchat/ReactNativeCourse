@@ -1,22 +1,35 @@
 import { Navigation } from 'react-native-navigation';
-import { name as appName } from './app.json';
+import { Provider } from 'react-redux';
 
-import AuthScreen from './src/screens/Auth';
-import FindPlaceScreen from './src/screens/FindPlace/index.js';
-import SharePlaceScreen from './src/screens/SharePlace/index.js';
+import { name as appName } from '../../app.json';
+import configureStore from '../store/configureStore';
+import AuthScreen from './Auth';
+import FindPlaceScreen from './FindPlace/index.js';
+import SharePlaceScreen from './SharePlace/index.js';
+
+const store = configureStore();
 
 export function getScreenName(componentName) {
   return `${appName}.${componentName}`;
 }
 
 export function registerScreens() {
-  Navigation.registerComponent(getScreenName('AuthScreen'), () => AuthScreen);
-  Navigation.registerComponent(
-    getScreenName('FindPlaceScreen'),
-    () => FindPlaceScreen
+  Navigation.registerComponentWithRedux(
+    getScreenName('AuthScreen'),
+    () => AuthScreen,
+    Provider,
+    store
   );
-  Navigation.registerComponent(
+  Navigation.registerComponentWithRedux(
+    getScreenName('FindPlaceScreen'),
+    () => FindPlaceScreen,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
     getScreenName('SharePlaceScreen'),
-    () => SharePlaceScreen
+    () => SharePlaceScreen,
+    Provider,
+    store
   );
 }

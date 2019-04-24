@@ -1,5 +1,5 @@
 import { Navigation } from 'react-native-navigation';
-import { getScreenName } from '../../screens';
+import { getScreenName } from '../screens';
 
 export const goToAuth = () => {
   Navigation.setRoot({
