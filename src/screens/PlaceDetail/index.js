@@ -1,31 +1,35 @@
-import React from 'react';
-import {
-  View,
-  Image,
-  Text,
-  Button,
-  StyleSheet,
-  TouchableOpacity
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import React, { Component } from 'react';
+import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+import { Navigation } from 'react-native-navigation';
 
-const placeDetail = (props) => {
-  return (
-    <View style={styles.container}>
-      <View>
-        <Image source={props.place.image} style={styles.placeImage} />
-        <Text style={styles.placeName}>{props.place.name}</Text>
+import Icon from 'react-native-vector-icons/Ionicons';
+import { deletePlace } from '../../store/actions';
+
+class PlaceDetail extends Component {
+  placeDeletedHandler = () => {
+    this.props.onDeletePlace(this.props.place.key);
+    Navigation.pop(this.props.componentId);
+  };
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <View>
+          <Image source={this.props.place.image} style={styles.placeImage} />
+          <Text style={styles.placeName}>{this.props.place.name}</Text>
+        </View>
+        <View style={styles.buttonsContainer}>
+          <TouchableOpacity onPress={this.placeDeletedHandler}>
+            <View style={styles.deleteButton}>
+              <Icon size={30} name="ios-trash" color="red" />
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={styles.buttonsContainer}>
-        <TouchableOpacity onPress={props.onPlaceDeleted}>
-          <View style={styles.deleteButton}>
-            <Icon size={30} name="ios-trash" color="red" />
-          </View>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-};
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -50,4 +54,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default placeDetail;
+export default connect(
+  null,
+  { onDeletePlace: deletePlace }
+)(PlaceDetail);

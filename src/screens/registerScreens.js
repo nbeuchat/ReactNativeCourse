@@ -20,6 +20,6 @@ export default function registerScreens(store) {
   );
   Navigation.registerComponent(
     getScreenName('PlaceDetailScreen'),
-    () => PlaceDetailScreen
+    withReduxStoreWrapper(PlaceDetailScreen, store)
   );
 }
