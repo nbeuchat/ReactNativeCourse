@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Modal,
   View,
   Image,
   Text,
@@ -11,40 +10,25 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const placeDetail = (props) => {
-  let modalContent = null;
-
-  if (props.place) {
-    modalContent = (
+  return (
+    <View style={styles.container}>
       <View>
         <Image source={props.place.image} style={styles.placeImage} />
         <Text style={styles.placeName}>{props.place.name}</Text>
       </View>
-    );
-  }
-
-  return (
-    <Modal
-      visible={props.place != null}
-      animationType="slide"
-      onRequestClose={props.onModalClosed}
-    >
-      <View style={styles.modalContainer}>
-        {modalContent}
-        <View style={styles.buttonsContainer}>
-          <TouchableOpacity onPress={props.onPlaceDeleted}>
-            <View style={styles.deleteButton}>
-              <Icon size={30} name="ios-trash" color="red" />
-            </View>
-          </TouchableOpacity>
-          <Button title="Close" onPress={props.onModalClosed} />
-        </View>
+      <View style={styles.buttonsContainer}>
+        <TouchableOpacity onPress={props.onPlaceDeleted}>
+          <View style={styles.deleteButton}>
+            <Icon size={30} name="ios-trash" color="red" />
+          </View>
+        </TouchableOpacity>
       </View>
-    </Modal>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  modalContainer: {
+  container: {
     margin: 22
   },
   buttonsContainer: {

@@ -6,6 +6,7 @@ import getScreenName from './getScreenName';
 import AuthScreen from './Auth';
 import FindPlaceScreen from './FindPlace';
 import SharePlaceScreen from './SharePlace';
+import PlaceDetailScreen from './PlaceDetail';
 
 export default function registerScreens(store) {
   Navigation.registerComponent(getScreenName('AuthScreen'), () => AuthScreen);
@@ -16,5 +17,9 @@ export default function registerScreens(store) {
   Navigation.registerComponent(
     getScreenName('SharePlaceScreen'),
     withReduxStoreWrapper(SharePlaceScreen, store)
+  );
+  Navigation.registerComponent(
+    getScreenName('PlaceDetailScreen'),
+    () => PlaceDetailScreen
   );
 }

@@ -13,8 +13,20 @@ export const goToMainTabs = () => {
           id: 'MainTabsId',
           children: [
             {
-              component: {
-                name: getScreenName('FindPlaceScreen'),
+              stack: {
+                children: [
+                  {
+                    component: {
+                      name: getScreenName('FindPlaceScreen'),
+                      options: {
+                        topBar: {
+                          visible: false,
+                          height: 0
+                        }
+                      }
+                    }
+                  }
+                ],
                 options: {
                   bottomTab: {
                     fontSize: 12,
